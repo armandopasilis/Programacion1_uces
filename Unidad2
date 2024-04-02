@@ -1,0 +1,273 @@
+   
+//////// EJERCICIO 1
+//    public static void main(String[] args) {
+//         Scanner scanner = new Scanner(System.in);
+//        System.out.print("Ingrese su edad: ");
+//        int edad = scanner.nextInt();
+//        if (edad >= 18) {
+//            System.out.println("Usted es mayor de edad.");
+//        } else {
+//            System.out.println("Usted es menor de edad.");
+//        }
+//    }
+//
+//////////////       Ejercicio 2
+// Crear un programa que pida al usuario ingresar un número y luego determine si es par o impar.
+//    public static void main(String[] args) {
+//          Scanner scanner = new Scanner(System.in);
+//           System.out.print ("ingrese un numero que quiera saber si es par o impar");
+//
+//            int numero_ingresado = scanner.nextInt();
+//            if (numero_ingresado % 2==0) {
+//            System.out.println("es par.");
+//        } else {
+//            System.out.println("es impar.");
+//        }}
+   
+//   //Ejercicio 3   
+//    public static void main(String[] args) {
+//        Scanner scanner= new Scanner(System.in);
+//        System.out.print("Por favor ingrese un numero");
+//        int numero1 = scanner.nextInt();
+//        System.out.print("Por favor ingrese numero 2");
+//        int numero2 = scanner.nextInt();      
+//        if (numero1==numero2){
+//        System.out.print("Son iguales");}
+//        else if (numero1 > numero2){
+//        System.out.print("El primer numero es mayor que el segundo");}
+//        else{System.out.print("El segundo numero es mayor que el primero");} } 
+/////////////Ejercicio 4
+//public static void main(String[] args) {
+//    Scanner scanner = new Scanner (System.in);
+//    System.out.print("Por favor ingrese un numero");
+//    int numero1 = scanner.nextInt();
+//    int i=1;
+//    while(i<=numero1){
+//    System.out.println("numero="+i);
+//    i++;
+//    }}
+///Problema 5
+//public static void main (String[] args){
+//    Scanner scanner = new Scanner(System.in);
+//    int numero_ingresado=-1;
+//    while(numero_ingresado < 0){
+//    System.out.print("por fevor ingrese un numero positivo");
+//    numero_ingresado = scanner.nextInt(); }
+//    System.out.print("usted ingreso un numero positivo. el numero "+numero_ingresado);}
+//////problema 6
+// public static void main (String[] args){
+//     Scanner scanner = new Scanner(System.in);
+//     int opcion;
+//     double numero1, numero2, resultado;// double para la opcion de divicion
+//        do {
+//            System.out.println("Menu de opciones:");
+//            System.out.println("1. Suma");
+//            System.out.println("2. Resta");
+//            System.out.println("3. Multiplicacion");
+//            System.out.println("4. Division");
+//            System.out.println("0. Salir");
+//            System.out.print("Seleccione una opcion: ");
+//            opcion = scanner.nextInt();
+//            switch (opcion) {
+//                case 1:
+//                    System.out.print("Ingrese el primer numero: ");
+//                    numero1 = scanner.nextDouble();
+//                    System.out.print("Ingrese el segundo numero: ");
+//                    numero2 = scanner.nextDouble();
+//                    resultado = numero1 + numero2;
+//                    System.out.println("El resultado de la suma es: " + resultado);
+//                    break;
+//                case 2:
+//                    System.out.print("Ingrese el primer numero: ");
+//                    numero1 = scanner.nextDouble();
+//                    System.out.print("Ingrese el segundo numero: ");
+//                    numero2 = scanner.nextDouble();
+//                    resultado = numero1 - numero2;
+//                    System.out.println("El resultado de la resta es: " + resultado);
+//                    break;
+//                case 3:
+//                    System.out.print("Ingrese el primer numero: ");
+//                    numero1 = scanner.nextDouble();
+//                    System.out.print("Ingrese el segundo numero: ");
+//                    numero2 = scanner.nextDouble();
+//                    resultado = numero1 * numero2;
+//                    System.out.println("El resultado de la multiplicacion es: " + resultado);
+//                    break;
+//                case 4:
+//                    System.out.print("Ingrese el primer numero: ");
+//                    numero1 = scanner.nextDouble();
+//                    System.out.print("Ingrese el segundo numero: ");
+//                    numero2 = scanner.nextDouble();
+//                    if (numero2 != 0) {
+//                        resultado = numero1 / numero2;
+//                        System.out.println("El resultado de la division es: " + resultado);
+//                    } else {
+//                        System.out.println("Error: no se puede dividir por cero.");
+//                    }
+//                    break;
+//                case 0:
+//                    System.out.println("Saliendo del programa...");
+//                    break;
+//                default:
+//                    System.out.println("Opción no válida. Intente nuevamente.");
+//            }
+//        } while (opcion != 0); }
+//problema 7
+//    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//        String pasword;
+//        boolean passwordvalido = false;
+//        do{
+//            System.out.print("ingrese una contraseña, recuerde que tiene que tener 8 caracteres o mas");
+//            pasword = scanner.nextLine(); 
+//            if (pasword.length()<8){
+//                System.out.print("contraseña invalida ,recuerde que tiene que tener 8 caracteres o mas ");        
+//            }else{
+//                passwordvalido= true;
+//                System.out.println("Contraseña válida.");
+//            }
+//        } while (!passwordvalido);            }
+  
+//    /Problema 8  
+//    public static void main(String[] args) {
+//        Scanner scanner= new Scanner(System.in);
+//        int monto_total =0 ,opcion,cantidad;
+//        int precioremera = 10000;
+//        int preciopantalon = 25000;
+//        int preciomedias = 5000;
+//        int preciozapatilas = 50000;
+//        do{
+//            if(monto_total !=0)
+//            {
+//             if (monto_total>=50000){
+//                        monto_total-=10000;
+//                    }
+//                    System.out.println("total a bonar"+monto_total);
+//                    System.out.println("------------------------");       }
+//            System.out.println("Bienvenido a nuestra tienda");
+//            System.out.println("Menu de articulos de la tienda:");
+//            System.out.println("1. remeras "+precioremera);
+//            System.out.println("2. pantalones "+preciopantalon);
+//            System.out.println("3. zapatillas "+preciozapatilas);
+//            System.out.println("4. borrar carrito");
+//            System.out.println("0. Salir");
+//            System.out.print("Seleccione una opcion: ");
+//            opcion = scanner.nextInt();
+//            switch (opcion) {
+//                case 1:
+//                    System.out.print("Ingrese cuantas remeras quiere ");
+//                    cantidad = scanner.nextInt();
+//                    monto_total+=(precioremera*cantidad);                  
+//                    break;
+//                case 2:
+//                     System.out.print("Ingrese cuantas pantalones quiere ");
+//                    cantidad = scanner.nextInt();
+//                    monto_total+=(preciopantalon*cantidad);                   
+//                    break;
+//                case 3:
+//                     System.out.print("Ingrese cuantas zapatillas quiere ");
+//                    cantidad = scanner.nextInt();
+//                    monto_total+=(preciozapatilas*cantidad);                   
+//                    break;
+//                case 4:
+//                    System.out.println("borrando su carrito");
+//                    monto_total=0;
+//                   break;
+//                case 0:
+//                    System.out.println("Saliendo del programa...");
+//                    break;
+//                default:
+//                    System.out.println("Opción no válida. Intente nuevamente.");
+//            }
+//        } while (opcion != 0);   }
+///Problema 9 
+//    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//        int numeroMenor, numeroMayor;
+//         Solicitar al usuario que ingrese el número menor y el mayor del rango
+//        System.out.print("Ingresa el numero menor del rango: ");
+//        numeroMenor = scanner.nextInt();
+//        System.out.print("Ingresa el numero mayor del rango: ");
+//        numeroMayor = scanner.nextInt();
+//         Iterar sobre todos los números en el rango y verificar si son primos
+//        System.out.println("numeros primos en el rango [" + numeroMenor + ", " + numeroMayor + "]:");
+//        for (int i = numeroMenor; i <= numeroMayor; i++) {
+//            if (esPrimo(i)) { //aca llamo a la funcion numero primo y le paso 
+//                como variable i que va a ser cada valor de la iteracion, es primo devuelve true o false (boolean)
+//                si es true se impime el nmero primo
+//                System.out.print(i + " ");           }       }  }
+//    Función para verificar si un número es primo
+//    los numeros primos se dividen ente si y por uno solamente
+//    private static boolean esPrimo(int numero) {
+//        if (numero <= 1) {
+//            return false;
+//        }
+//        for (int i = 2; i <= Math.sqrt(numero); i++) {//math.sqrt es la raiz cuadrada de numero 
+//            inicializo asi para que el numero sea menor o igual a su raiz
+//            if (numero % i == 0) {
+//                return false;
+//            }
+//        }
+//        return true;  }}
+//      Problema 10
+//    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//        int numeroSecreto = (int) (Math.random() * 100) + 1; // Número aleatorio entre 1 y 100
+//         el +1 es porque el math me da valorres incluyendo el 0 , con esta +1 hago que empiece del 1
+//        int intentos = 0;
+//        int intentoUsuario;
+//
+//        System.out.println("Hola, este es un juego adivina el número secreto (entre 1 y 100).");
+//
+//        do {
+//            System.out.print("adivina el numero que estoy pensando: ");
+//            intentoUsuario = scanner.nextInt();
+//            intentos++;//una auto suma a la variable intentos 
+//
+//            if (intentoUsuario < numeroSecreto) {
+//                System.out.println("El número secreto es mayor. Inténtalo de nuevo.");
+//            } else if (intentoUsuario > numeroSecreto) {
+//                System.out.println("El número secreto es menor. Inténtalo de nuevo.");
+//            }
+//        } while (intentoUsuario != numeroSecreto);
+//
+//        System.out.println("¡muy bien descublriste el numero secreto " + intentos + " intentos.");
+//    }
+//}
+//
+///               Problema 11
+//    public static void main(String[] args) {
+//        for (int i = 1; i <= 10; i++) {
+//            for (int j = 1; j <= i; j++) {// este buble controla la fila de * a imprimir de 1 a 10
+//                System.out.print("* ");
+//            }
+//            System.out.println();
+//        }
+//    }
+//}
+/// problema 12
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int dividendo, divisor;
+        
+        // Solicitar al usuario que ingrese los números
+        System.out.print("Ingrese el dividendo: ");
+        dividendo = scanner.nextInt();
+        System.out.print("Ingrese el divisor: ");
+        divisor = scanner.nextInt();
+        
+        // Verificar si el divisor es cero
+        if (divisor != 0) {
+            // Realizar la división y mostrar el resultado
+            int cociente = dividendo / divisor;
+            int resto = dividendo % divisor;
+            System.out.println("Resultado de la división: Cociente = " + cociente + ", Resto = " + resto);
+        } else {
+            System.out.println("Error: No se puede dividir por cero.");
+        }
+    }
+}
+
+    
+    
+    
