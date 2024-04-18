@@ -1,0 +1,171 @@
+package com.mycompany.evaluacion;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Arman
+ */
+public class Evaluacion {
+
+    public static void main(String[] args) {
+//CONSIGNAS
+//Ejercicio 1: Realizar un programa en java que permita al usuario ingresar 3 números
+//enteros y luego los imprima en orden de mayor a menor.
+//Ejercicio 2: Realizar un programa en java que simule una calculadora, con los
+//siguientes pasos:
+//Paso 1: El usuario tiene que poder elegir de un menú la opción de la operación que
+//desea realizar: suma, resta, multiplicación y división.
+//Paso 2: El usuario debe ingresar los 2 números decimales para la operación
+//seleccionada.
+//Paso 3: El usuario debe ver en pantalla el resultado de la operación elegida con los
+//números ingresados.
+//Observación: se debe contemplar la posibilidad de que el usuario intente dividir por
+//cero, en cuyo caso se le debe informar que la operación no se puede realizar por
+//tratarse de una división por cero.
+ Declaro los tres numeros 
+
+Scanner scanner = new Scanner(System.in);
+System.out.print("Ingrese un primer numero entero mayor a 0 ");
+int numero_1 = scanner.nextInt();
+System.out.print("Ingrese un segundo numero entero mayor a 0 ");
+int numero_2 = scanner.nextInt();
+System.out.print("Ingrese un tecer numero entero mayor a 0 ");
+int numero_3 = scanner.nextInt();
+    
+//este codigo chequea si el numero_1 es el mas grande de los otros 2 y luego chequea si el numero_2 es mas grande que el Numero_3
+if (numero_1 > numero_2 && numero_1 > numero_3) {
+            if (numero_2 > numero_3) {
+                System.out.println("Se Ordenaran los numeros de mayor a menor: " + numero_1 + ", " + numero_2 + ", " + numero_3);}
+                if (numero_3 > numero_2) { System.out.println("Orden de mayor a menor: " + numero_1 + ", " + numero_3 + ", " + numero_2);       
+    }
+}
+           
+//este codigo chequea si el numero_2 es el mas grande de los otros 2 y luego chequea si el numero_1 es mas grande que el Numero_3
+if (numero_2 > numero_1 && numero_2 > numero_3) {
+            if (numero_1 > numero_3) {
+                System.out.println("Se Ordenaran los numeros  de mayor a menor: " + numero_2 + ", " + numero_1 + ", " + numero_3);}
+                if (numero_3 > numero_1) { System.out.println("Orden de mayor a menor: " + numero_2 + ", " + numero_3 + ", " + numero_1);       
+    }
+}
+     
+//este codigo chequea si el numero_3 es el mas grande de los otros 2 y luego chequea si el numero_2 es mas grande que el Numero_3
+if (numero_3 > numero_1 && numero_3 > numero_2) {
+            if (numero_2 > numero_1) {
+                System.out.println("Se Ordenaran los numeros  de mayor a menor: " + numero_3 + ", " + numero_2 + ", " + numero_1);}
+                if (numero_1 > numero_2) { System.out.println("Orden de mayor a menor: " + numero_3 + ", " + numero_1 + ", " + numero_2);       
+    }
+}
+     
+
+    
+    }
+}
+
+/////////////////////////////////////////////////////////
+Esta es otra forma de hacer el ejercicio que se me ocurrio, esta vercion usa arrays pero creo que es menos codigo
+Una vez que se ingresan los 3 numeros y se ingresan en el array la funcion reverseOrder los ordena , luego un for los itera y los imprime
+////////////////////////////////////////////////
+public class Evaluacion {
+public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        List<Integer> numeros = new ArrayList<>();//creo un array , una lista de numeros
+
+        System.out.println("Ingrese el primer número:");
+        int num1 = scanner.nextInt();
+        numeros.add(num1);//esta funcion agrega numeros al array
+
+        System.out.println("Ingrese el segundo número:");
+        int num2 = scanner.nextInt();
+        numeros.add(num2);//esta funcion agrega numeros al array
+
+        System.out.println("Ingrese el tercer número:");
+        int num3 = scanner.nextInt();
+        numeros.add(num3);//esta funcion agrega numeros al array
+
+        System.out.println("Números ingresados en orden de mayor a menor:");
+        Collections.sort(numeros, Collections.reverseOrder());//esta funcion ordena 
+        //los numeros dentro del array , reverseOder invoca a una funcion de collections 
+        //y los ordena de mayor a menor
+        for (Integer numero : numeros) {//este for itera sobre el array numeros 
+            //e imprime numero que seria cada elemento del array
+            System.out.println(numero);
+        }
+
+        scanner.close();
+    }
+}
+
+
+//Ejercicio 2: Realizar un programa en java que simule una calculadora, con los
+//siguientes pasos:
+//Paso 1: El usuario tiene que poder elegir de un menú la opción de la operación que
+//desea realizar: suma, resta, multiplicación y división.
+//Paso 2: El usuario debe ingresar los 2 números decimales para la operación
+//seleccionada.
+//Paso 3: El usuario debe ver en pantalla el resultado de la operación elegida con los
+//números ingresados.
+//Observación: se debe contemplar la posibilidad de que el usuario intente dividir por
+//cero, en cuyo caso se le debe informar que la operación no se puede realizar por
+//tratarse de una división por cero.
+
+//
+public class Evaluacion {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+//aca declaro las variables, declaro como double por la divicion , da con coma ,
+//podria usar enteros pero redondeo
+        int opcion;
+        double num1, num2, resultado;
+//Armo un menu don las operaciones de la calculadora, el do garantiza que al menos 
+//una vez se va a realizar el codigo
+        do {
+            System.out.println("1. Suma");
+            System.out.println("2. Resta");
+            System.out.println("3. Multiplicacion");
+            System.out.println("4. Division");
+            System.out.println("5. Salir");
+            System.out.println("Seleccione una opcion ingresando un numero entero");
+
+            opcion = scanner.nextInt();
+            //con esto me aseguro que la opcion este entre 1 y 4 si elije otra entra 
+            if (opcion >= 1 && opcion <= 4) {
+                System.out.println("Ingrese el primer numero:");
+                num1 = scanner.nextDouble();
+                System.out.println("Ingrese el segundo numero:");
+                num2 = scanner.nextDouble();
+//con el swich despliego las opciones 
+                switch (opcion) {
+                    case 1:
+                        resultado = num1 + num2;
+                        System.out.println("El resultado de la suma es: " + resultado);
+                        break;
+                    case 2:
+                        resultado = num1 - num2;
+                        System.out.println("El resultado de la resta es: " + resultado);
+                        break;
+                    case 3:
+                        resultado = num1 * num2;
+                        System.out.println("El resultado de la Multiplicacion es: " + resultado);
+                        break;
+                    case 4:
+                        if (num2 != 0) {// con esto me aseguro que el divisor no sea sero , si esto da false ingresa al else
+                            resultado = num1 / num2;
+                            System.out.println("El resultado de la Division es: " + resultado);
+                        } else {
+                            System.out.println("Error: No se puede dividir por cero.");
+                        }
+                        break;
+                }
+                //si el usuario elije una opcion distinta al 5 y que no esta entre el 1 y el 4
+            } else if (opcion != 5) {
+                System.out.println("Opcion invalida. Por favor, seleccione una opcion valida.");
+            }
+        } while (opcion != 5);
+//el do se realiza mientras el usuario no ingrese 5 una vez que ingresa el 5 se termina el bucle
+        System.out.println("Gracias por utilizar la calculadora.");
+        scanner.close();
+    }
+}
