@@ -1,0 +1,163 @@
+
+
+package com.mycompany.unidad4;
+import java.util.Scanner;
+import java.util.Random;
+/**
+ *
+ * @author Arman
+ */
+public class Unidad4 {
+  static int contador = 0;//ejercicio 8 
+    public static void main(String[] args) {
+        
+        saludar();
+        saludar("Armando");
+        System.out.println(areaCirculo(8.1));// me imprime el area del circulo
+        System.out.println(calculoPar(256));//imprime true para par y false si no
+        System.out.println(sumar(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15));//ejer 4
+        System.out.println(sumar(1,2,4,8,16,32,64,126,256,512));//ejer 4
+        System.out.println(sumar(100,200,300,400,500));//ejer 4
+        duplicar(256);//ejercicio 5
+        System.out.println(duplicar_1(256));//ejercicio 5
+        tablaMultiplicar(5);//ejercicio 6
+        int factorial = calcularFactorial(8);//devino la variable local para almaacenar 
+        System.out.println(factorial);//implimo la variable para vizualizar
+        //Ejercicio 8 llamamos a la función incrementarContador varias veces
+        incrementarContador();
+        incrementarContador();
+        incrementarContador();
+        // Mostramos el valor actual del contador
+        System.out.println("Contador: " + contador);
+        numeroAleatorio();
+        
+        //ejercicio 10 adivinar el numero aleatorio
+        Scanner scanner = new Scanner(System.in);
+        int numeroSecreto = generarNumeroSecreto();
+        int intentos = 0;
+        int intentoUsuario;
+        do {
+            intentos++;
+            System.out.print("Adivina el numero secreto (entre 1 y 100): ");
+            intentoUsuario = scanner.nextInt();
+            if (intentoUsuario < numeroSecreto) {
+                System.out.println("El numero secreto es mayor.");
+            } else if (intentoUsuario > numeroSecreto) {
+                System.out.println("El numero secreto es menor.");
+            }
+        } while (intentoUsuario != numeroSecreto);
+        System.out.println("¡Correcto! El numero secreto era " + numeroSecreto + ". Te tomo " + intentos + " intentos.");
+        
+        
+     // Actividad 11 lamo a la funcion que da los numeor aleatorios del 1 al 6
+        System.out.println("Lanzamiento de dados: " + lanzarDado() + " y " + lanzarDado());
+    
+
+        
+        
+      } 
+     public static void saludar() {//esta funcion saluda
+        System.out.println("Hola");}
+
+
+    public static void saludar(String nombre) {//esta funcion saluda al numbre 
+        //que le pasaron por parametro, saludo personalizado
+        System.out.println("Hola"+ nombre );}
+    
+    //Actividad 2 esta funcion calcula el area del circulo
+    public static double areaCirculo(double radio) {
+        return Math.PI * radio * radio;
+        
+    }
+    //Actividad 3 calcula si un numero es par 
+     public static boolean calculoPar(int numero) {
+        return numero % 2 == 0;
+    }
+
+    // Actividad 4 suma variaos numeros enteros
+    public static int sumar(int... cantidades) {
+        int suma = 0;
+        for(int numero : cantidades){
+            suma +=  numero;//es igual a sumar= suma + numero
+        }
+        return suma ;
+    }
+      
+    //Actividad 5 esta funcion imprime un numero y duplica 
+    public static void duplicar(int numero) {//aca defini VOID porque no devuelvo
+        //solo imprimo
+        System.out.println("Numero original: " + numero);
+        System.out.println("Duplicado: " + (numero * 2));
+    }
+    
+   //Actividad 5 esta funcion imprime un numero y duplica 
+     public static int duplicar_1(int numero) {//aca defini asi porque si devuelvo
+    int numeroDuplicado = numero * 2;
+        return  numeroDuplicado;
+    }
+    
+    
+     // Actividad 6 imprime la tabla del numero pasado
+    public static void tablaMultiplicar(int numero) {
+        for (int i = 1; i <= 10; i++) {//inicializo i en 1
+      //luego impime del 1 al 10 y mientras se imprime de multiplica y se cra la tabla
+            System.out.println(numero + " x " + i + " = " + (numero * i));
+        }
+    }
+    
+    
+    // Actividad 7 calculo el factorial de 
+    public static int calcularFactorial(int numero) {
+        int factorial = 1;
+        for (int i = 1; i <= numero; i++) {
+            factorial *= i;
+        }
+        return factorial;
+    }
+    
+    
+    //Actividad 8 incrementador de variable global
+    public static void incrementarContador() {
+   // Incrementamos el valor de la variable global contador en 1
+        contador++;
+    }
+    
+     // Actividad 9 genero un numero aleatorio
+    public static void numeroAleatorio() {
+        Random rand = new Random();
+        int numeroAleatorio = rand.nextInt(100) + 1;
+        System.out.println("Numero aleatorio: " + numeroAleatorio);
+    }
+    
+     // Actividad 10 numero aleatorios ,aca genero el numero aleatorio y devuelvo 
+    public static int generarNumeroSecreto() {
+        Random rand = new Random();
+        return rand.nextInt(100) + 1;
+    }
+    
+    
+    // Actividad 11 lanzamiento de dado
+    public static int lanzarDado() {
+        Random rand = new Random();
+        return rand.nextInt(6) + 1;
+    }
+    
+} 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
