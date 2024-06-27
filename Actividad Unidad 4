@@ -1,0 +1,326 @@
+ */
+
+package com.mycompany.actividad_4;
+import java.util.Scanner;
+import java.util.LinkedList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+/**
+ *
+ * @author Arman
+ */
+public class Actividad_4 {
+
+ 
+//    1. Cadenas de Caracteres:    
+//
+//    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Ingrese una frase: ");
+//        String frase = scanner.nextLine();
+//
+//        int cantidadA = contarLetraA(frase);
+//        System.out.println("La letra 'a' aparece " + cantidadA + " veces en la frase.");
+//    }
+//
+//    // Función para contar la cantidad de veces que aparece la letra 'a'
+//    public static int contarLetraA(String frase) {
+//        int contador = 0;
+//        for (int i = 0; i < frase.length(); i++) {
+//            if (frase.charAt(i) == 'a' || frase.charAt(i) == 'A') {
+//                contador++;
+//            }
+//        }
+//        return contador;
+//    }
+//    
+    
+//    2. Arreglos en Funciones:
+//
+//    public static void main(String[] args) {
+//        int[] arreglo = {1, 2, 3, 4, 5};
+//
+//        int suma = sumarArreglo(arreglo);
+//        System.out.println("La suma de los elementos del arreglo es: " + suma);
+//    }
+//
+//    // Función para sumar los elementos de un arreglo de enteros
+//    public static int sumarArreglo(int[] arreglo) {
+//        int suma = 0;
+//        for (int num : arreglo) {
+//            suma += num;
+//        }
+//        return suma;
+//    }  
+//    3. Arreglos Bidimensionales (Matrices):
+//
+//    public static void main(String[] args) {
+//        char[][] matriz = {
+//            {'a', 'b', 'c'},
+//            {'b', 'e', 'f'},
+//            {'c', 'h', 'i'}
+//        };
+//
+//        // Imprimir la matriz
+//        for (int i = 0; i < 3; i++) {
+//            for (int j = 0; j < 3; j++) {
+//                System.out.print(matriz[i][j] + " ");
+//            }
+//            System.out.println();
+//        }
+//       
+//}
+// 
+//  
+//4. Introducción a Listas y Colecciones:
+//    public static void main(String[] args) {
+//        LinkedList<String> listaEstudiantes = new LinkedList<>();
+//
+//        // Agregar nombres a la lista
+//        listaEstudiantes.add("Juan");
+//        listaEstudiantes.add("María");
+//        listaEstudiantes.add("Carlos");
+//
+//        // Eliminar un nombre de la lista
+//        listaEstudiantes.remove("María");
+//
+//        // Buscar un nombre en la lista
+//        if (listaEstudiantes.contains("Juan")) {
+//            System.out.println("Juan esta en la lista.");
+//        } else {
+//            System.out.println("Juan no esta en la lista.");
+//        }
+//    }
+//
+
+//    5. Inserción en Arreglos:
+//    public static void main(String[] args) {
+//        int[] arreglo = {1, 3, 5, 7, 9};
+//        int nuevoElemento = 4;
+//
+//        // Insertar nuevoElemento en el arreglo manteniendo el orden
+//        int[] nuevoArreglo = insertarOrdenado(arreglo, nuevoElemento);
+//
+//        // Imprimir el arreglo resultante
+//        System.out.println("Arreglo despues de la insercion:");
+//        System.out.println(Arrays.toString(nuevoArreglo));
+//    }
+//
+//    // Función para insertar un elemento en un arreglo ordenado
+//    public static int[] insertarOrdenado(int[] arreglo, int nuevoElemento) {
+//        int[] nuevoArreglo = new int[arreglo.length + 1];
+//        int i = 0;
+//
+//        while (i < arreglo.length && arreglo[i] < nuevoElemento) {
+//            nuevoArreglo[i] = arreglo[i];
+//            i++;
+//        }
+//        nuevoArreglo[i] = nuevoElemento;
+//
+//        while (i < arreglo.length) {
+//            nuevoArreglo[i + 1] = arreglo[i];
+//            i++;
+//        }
+//        return nuevoArreglo;
+//    } 
+//   6. Arreglos Multimencionales y Diccionarios:
+//
+//    public static void main(String[] args) {
+//        // Arreglo multidimensional para almacenar puntajes de estudiantes
+//        int[][] puntajes = {
+//            {80, 90, 95},
+//            {70, 85, 92},
+//            {88, 82, 78}
+//        };
+//
+//        // Imprimir los puntajes
+//        for (int i = 0; i < puntajes.length; i++) {
+//            for (int j = 0; j < puntajes[i].length; j++) {
+//                System.out.print(puntajes[i][j] + " ");
+//            }
+//            System.out.println();
+//        }
+//    }
+//      Uso de Listas en Java:
+//    public class Main {
+//    public static void main(String[] args) {
+//        ListaProductos listaProductos = new ListaProductos();
+//
+//        // Agregar productos
+//        listaProductos.agregarProducto(new Producto("Laptop", 1500.0, 5));
+//        listaProductos.agregarProducto(new Producto("Mouse", 20.5, 10));
+//        listaProductos.agregarProducto(new Producto("Teclado", 50.75, 7));
+//
+//        // Imprimir lista de productos
+//        System.out.println("Lista de Productos:");
+//        listaProductos.imprimirProductos();
+//        System.out.println("Tamaño de la lista: " + listaProductos.getSize());
+//
+//        // Eliminar un producto
+//        listaProductos.eliminarProducto("Mouse");
+//
+//        // Imprimir lista de productos después de eliminar
+//        System.out.println("\nLista de Productos después de eliminar 'Mouse':");
+//        listaProductos.imprimirProductos();
+//        System.out.println("Tamaño de la lista: " + listaProductos.getSize());
+//
+//        // Modificar el precio de un producto
+//        listaProductos.modificarPrecio("Laptop", 1600.0);
+//
+//        // Imprimir lista de productos después de modificar el precio
+//        System.out.println("\nLista de Productos después de modificar precio de 'Laptop':");
+//        listaProductos.imprimirProductos();
+//    }
+//}
+//
+//class Producto {
+//    private String nombre;
+//    private double precio;
+//    private int cantidad;
+//
+//    public Producto(String nombre, double precio, int cantidad) {
+//        this.nombre = nombre;
+//        this.precio = precio;
+//        this.cantidad = cantidad;
+//    }
+//
+//    public String getNombre() {
+//        return nombre;
+//    }
+//
+//    public double getPrecio() {
+//        return precio;
+//    }
+//
+//    public void setPrecio(double precio) {
+//        this.precio = precio;
+//    }
+//
+//    public void imprimirProducto() {
+//        System.out.println("Nombre: " + nombre + ", Precio: " + precio + ", Cantidad: " + cantidad);
+//    }
+//}
+//
+//class ListaProductos {
+//    private NodoProducto primero;
+//    private int size;
+//
+//    private class NodoProducto {
+//        Producto producto;
+//        NodoProducto siguiente;
+//
+//        NodoProducto(Producto producto) {
+//            this.producto = producto;
+//        }
+//    }
+//
+//    public ListaProductos() {
+//        primero = null;
+//        size = 0;
+//    }
+//
+//    public void agregarProducto(Producto producto) {
+//        NodoProducto nuevo = new NodoProducto(producto);
+//        nuevo.siguiente = primero;
+//        primero = nuevo;
+//        size++;
+//    }
+//
+//    public boolean eliminarProducto(String nombre) {
+//        NodoProducto actual = primero;
+//        NodoProducto anterior = null;
+//
+//        while (actual != null) {
+//            if (actual.producto.getNombre().equals(nombre)) {
+//                if (anterior == null) {
+//                    primero = actual.siguiente;
+//                } else {
+//                    anterior.siguiente = actual.siguiente;
+//                }
+//                size--;
+//                return true;
+//            }
+//            anterior = actual;
+//            actual = actual.siguiente;
+//        }
+//        return false;
+//    }
+//
+//    public void modificarPrecio(String nombre, double nuevoPrecio) {
+//        NodoProducto actual = primero;
+//
+//        while (actual != null) {
+//            if (actual.producto.getNombre().equals(nombre)) {
+//                actual.producto.setPrecio(nuevoPrecio);
+//                return;
+//            }
+//            actual = actual.siguiente;
+//        }
+//    }
+//
+//    public void imprimirProductos() {
+//        NodoProducto actual = primero;
+//        while (actual != null) {
+//            actual.producto.imprimirProducto();
+//            actual = actual.siguiente;
+//        }
+//    }
+//
+//    public int getSize() {
+//        return size;
+//    }
+//}
+//
+//    
+//    
+//    8. Búsqueda en Diccionarios:
+//    
+//public class Main {
+//    public static void main(String[] args) {
+//        // Crear un diccionario de estudiantes (Mapa de String a Estudiante)
+//        Map<String, Estudiante> diccionarioEstudiantes = new HashMap<>();
+//
+//        // Agregar algunos estudiantes al diccionario
+//        diccionarioEstudiantes.put("A001", new Estudiante("A001", "Juan Perez", 20, "Ingeniería Informática"));
+//        diccionarioEstudiantes.put("A002", new Estudiante("A002", "Maria López", 21, "Medicina"));
+//        diccionarioEstudiantes.put("A003", new Estudiante("A003", "Carlos Ramirez", 19, "Derecho"));
+//
+//        // Buscar un estudiante por su código
+//        String codigoBuscado = "A002";
+//        Estudiante encontrado = diccionarioEstudiantes.get(codigoBuscado);
+//
+//        // Mostrar información del estudiante encontrado (si existe)
+//        if (encontrado != null) {
+//            System.out.println("Estudiante encontrado:");
+//            System.out.println(encontrado);
+//        } else {
+//            System.out.println("Estudiante con código '" + codigoBuscado + "' no encontrado.");
+//        }
+//    }
+//}
+//
+//// Clase Estudiante con atributos básicos
+//class Estudiante {
+//    private String codigo;
+//    private String nombre;
+//    private int edad;
+//    private String carrera;
+//
+//    // Constructor
+//    public Estudiante(String codigo, String nombre, int edad, String carrera) {
+//        this.codigo = codigo;
+//        this.nombre = nombre;
+//        this.edad = edad;
+//        this.carrera = carrera;
+//    }
+//
+//    // Método toString para imprimir la información del estudiante
+//    @Override
+//    public String toString() {
+//        return "Código: " + codigo + ", Nombre: " + nombre + ", Edad: " + edad + ", Carrera: " + carrera;
+//    }
+//}
+//
+//    
+}
