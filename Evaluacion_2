@@ -1,0 +1,101 @@
+
+package com.mycompany.evaluacion2;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
+/**
+ *
+ * @author Arman
+ */
+//Ejercicio 1: Escribir un programa en Java que almacene el nombre y la edad de varios
+//estudiantes en un diccionario y permita buscar la edad de un estudiante dado su
+//nombre.
+public class Evaluacion2 {
+
+    public static void main(String[] args) {
+        //Aca creo un diccionario para almacenar los estudiantes y sus edades
+        Map<String, Integer> estudiantes = new HashMap<>();
+        
+        // aca agrego algunos estudiantes con sus edades al diccionario
+        estudiantes.put("Armando", 20);
+        estudiantes.put("Lucas", 22);
+        estudiantes.put("Victor", 21);
+        estudiantes.put("Lautarp", 19);
+        
+        // asigno a la variable el nombre del estudiante para buscar su edad
+        String nombreBuscado = "Armando";
+        
+        // con esto busco la edad del estudiante dado su nombre
+        if (estudiantes.containsKey(nombreBuscado)) {
+            int edad = estudiantes.get(nombreBuscado);
+            System.out.println(nombreBuscado + " tiene " + edad + " años.");
+        } else {
+            System.out.println("No se encontro informacion para " + nombreBuscado + ".");
+        }
+    }
+}
+//////////////////////////////////////////////////////////////////////////////////
+    
+//Ejercicio 2: Comparar el rendimiento de búsqueda entre un ArrayList y un HashSet para
+//una gran cantidad de datos y explicar las diferencias encontradas.
+
+
+    public static void main(String[] args) {
+           int numElementos = 100; // Cantidad  de datos tarda menos en ejecutarse
+//        int numElementos = 1000000; // Cantidad grande de datos tarda mas 
+        
+        // primero creo un  un ArrayList con números aleatorios
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        Random random = new Random();
+        for (int i = 0; i < numElementos; i++) {
+            arrayList.add(random.nextInt(numElementos));
+        }
+        
+        // 2 creo un  un HashSet con los mismos números aleatorios
+        HashSet<Integer> hashSet = new HashSet<>(arrayList);
+        
+        // despues hacemos las  búsquedas en ArrayList
+        long startTime = System.nanoTime();
+        for (int i = 0; i < numElementos; i++) {
+            arrayList.contains(random.nextInt(numElementos));
+        }
+        long endTime = System.nanoTime();
+        long tiempoArrayList = endTime - startTime;
+        System.out.println("Tiempo de busqueda en ArrayList: " + tiempoArrayList + " nanosegundos");
+        
+        // hacemos la busquedas en HashSet para comparar
+        startTime = System.nanoTime();
+        for (int i = 0; i < numElementos; i++) {
+            hashSet.contains(random.nextInt(numElementos));
+        }
+        endTime = System.nanoTime();
+        long tiempoHashSet = endTime - startTime;
+        System.out.println("Tiempo de búsqueda en HashSet: " + tiempoHashSet + " nanosegundos");
+    }
+}
+    
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//Ejercicio 3: Escribir un método en Java que reciba un arreglo de números enteros y
+//devuelva una lista con los números pares contenidos en él.
+    public static void main(String[] args) {
+        int[] arreglo = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};//creo el arreglo
+        List<Integer> pares = obtenerNumerosPares(arreglo);//lamo a la funcion y le paso el arreglo
+        System.out.println("Numeros pares en el arreglo: " + pares);
+    }
+    
+    public static List<Integer> obtenerNumerosPares(int[] numeros) {//declaro la funcion
+        List<Integer> resultado = new ArrayList<>();//creo el array y le asigno la arreglo
+        
+        for (int numero : numeros) {
+            if (numero % 2 == 0) {//si es par se agrega el numero al array
+                resultado.add(numero);
+            }
+        }
+        
+        return resultado;
+    }
+}
